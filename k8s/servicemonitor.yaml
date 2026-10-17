@@ -1,0 +1,18 @@
+# Used only when the Prometheus Operator is installed in the cluster.
+# Without the operator, the prometheus.io/scrape annotations on the pod
+# template (see deployment.yaml) do the same job with plain Prometheus.
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: taskboard
+  namespace: taskboard
+  labels:
+    app.kubernetes.io/name: taskboard
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: taskboard
+  endpoints:
+    - port: http
+      path: /metrics
+      interval: 30s

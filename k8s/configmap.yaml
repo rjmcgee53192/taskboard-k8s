@@ -1,0 +1,12 @@
+# Non-sensitive configuration for the taskboard app.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: taskboard-config
+  namespace: taskboard
+  labels:
+    app.kubernetes.io/name: taskboard
+data:
+  PORT: "8080"
+  LOG_LEVEL: "INFO"
+  APP_NAME: "taskboard"

@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Local build artifact (53MB) - rebuild with: docker build -t taskboard:local .
+taskboard-image.tar
